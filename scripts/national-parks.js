@@ -70,10 +70,9 @@ function filterTable(data, tableBody, filter) {
     const filteredData = filter === "All" ? data : data.filter((nationalPark) => nationalPark.State === filter);
     buildTable(filteredData, tableBody);
   } else {
-    console.log("hekll");
-    // const filteredData = filter === "All" ? data : data.filter((nationalPark) =>  nationalPark.LocationName.includes(filter));
-    // console.log(filteredData)
-    // buildTable(filteredData, tableBody);
+    const filteredData = filter === "All" ? data : data.filter((nationalPark) =>  nationalPark.LocationName.includes(filter));
+    console.log(filteredData)
+    buildTable(filteredData, tableBody);
   }
 }
 
@@ -97,4 +96,8 @@ byTypeRadio.addEventListener("change", () => {
 
 locationDropdown.addEventListener("change", () => {
   filterTable(nationalParksArray, nationalParkArrayTBody, locationDropdown.value);
+});
+
+typeDropdown.addEventListener("change", () => {
+  filterTable(nationalParksArray, nationalParkArrayTBody, typeDropdown.value);
 });
