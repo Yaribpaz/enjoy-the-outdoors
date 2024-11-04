@@ -1,10 +1,10 @@
 "use strict";
 
 const nationalParkArrayTBody = document.querySelector("#nationalParkArrayTBody");
-const locationFilter = document.querySelector("#locationFilter");
-const typeFilter = document.querySelector("#typeFilter");
-const filterLocationRadio = document.querySelector("#filterlocationRadio");
-const filterParkTypeRadio = document.querySelector("#filterParkTypeRadio");
+const locationDropdown = document.querySelector("#locationDropdown");
+const typeDropdown = document.querySelector("#typeDropdown");
+const byLocationRadio = document.querySelector("#byLocationRadio");
+const byTypeRadio = document.querySelector("#byTypeRadio");
 
 function buildTable(data, tableBody) {
   tableBody.innerHTML = "";
@@ -48,61 +48,53 @@ function buildTable(data, tableBody) {
 }
 
 function populateDropdown(data, dropdown) {
-  const types = [...new Set(data.map((nationalPark) => nationalPark.State))];
-  dropdown.innerHTML = '<option value="All">All</option>';
-  types.forEach((type) => {
+  
+  //create "All" option
+  const option = document.createElement("option");
+  option.value = "All";
+  option.textContent = "All";
+  dropdown.appendChild(option);
+  dropdown.value = "All"
+
+  data.forEach((value) => {
     const option = document.createElement("option");
-    option.value = type;
-    option.textContent = type;
+    option.value = value;
+    option.textContent = value;
     dropdown.appendChild(option);
   });
-}
-
-function populateTypeDropdown() {
-  typeFilter.innerHTML = '<option value="All">All</option>';
-  parkTypesArray.forEach(type => {
-    const option = document.createElement("option");
-    option.value = type;
-    option.textContent = type;
-    typeFilter.appendChild(option);
-  });
-  typeFilter.style.display = 'inline-block';
+  dropdown.style.display = "inline-block";
 }
 
 function filterTable(data, tableBody, filter) {
-
-  if (filterLocationRadio.checked){
+  if (byLocationRadio.checked) {
     const filteredData = filter === "All" ? data : data.filter((nationalPark) => nationalPark.State === filter);
-  buildTable(filteredData, tableBody);
-
+    buildTable(filteredData, tableBody);
   } else {
-    console.log("hekll")
+    console.log("hekll");
     // const filteredData = filter === "All" ? data : data.filter((nationalPark) =>  nationalPark.LocationName.includes(filter));
     // console.log(filteredData)
     // buildTable(filteredData, tableBody);
   }
- 
 }
 
-
-populateDropdown(nationalParksArray, locationFilter);
+populateDropdown(locationsArray, locationDropdown);
 buildTable(nationalParksArray, nationalParkArrayTBody);
 
-filterLocationRadio.addEventListener("change", () => {
-  if (filterLocationRadio.checked) {
-    typeFilter.style.display = 'none';
-    locationFilter.style.display = 'inline-block';
+byLocationRadio.addEventListener("change", () => {
+  if (byLocationRadio.checked) {
+    typeDropdown.style.display = "none";
+    locationDropdown.style.display = "inline-block";
+    populateDropdown(locationsArray, locationDropdown);
   }
 });
 
-filterParkTypeRadio.addEventListener("change", () => {
-  if (filterParkTypeRadio.checked) {
-    locationFilter.style.display = 'none'; 
-    populateTypeDropdown();
+byTypeRadio.addEventListener("change", () => {
+  if (byTypeRadio.checked) {
+    locationDropdown.style.display = "none";
+    populateDropdown(parkTypesArray, typeDropdown);
   }
 });
 
-locationFilter.addEventListener("change", () => {
-  filterTable(nationalParksArray, nationalParkArrayTBody, locationFilter.value);
+locationDropdown.addEventListener("change", () => {
+  filterTable(nationalParksArray, nationalParkArrayTBody, locationDropdown.value);
 });
-
