@@ -1,25 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              <a class="nav-link" href="national-parks.html">National Parks</a>
-              <a class="nav-link" href="mountains.html">Mountains</a>
+    <link rel="stylesheet" href="custom-style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary theNavBar ms-5" data-bs-theme="dark">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+            <a class="nav-link" href="national-parks.html">NATIONAL PARKS</a>
+            <a class="nav-link" href="mountains.html">MOUNTAINS</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="backgroundWithText" class="d-flex">
+      <h4 id="banner-text" class="text-white banner-sub fs-1 text-center mb-5 pb-5">
+        Explore the Beauty and Wonders <br />
+        of the Great Outdoors!
+      </h4>
+    </div>
+
+    <div class="container my-5">
+      <h2 class="text-center mb-5 pb-3">Facts About the Great Outdoors!</h2>
+      <div class="row justify-content-center mt-4 gx-5">
+        <div class="col-md-4">
+          <div class="text-center">
+            <img src="mountain.svg" class="icon" alt="..." />
+
+            <h5 class="card-title">The Appalachian Mountains</h5>
+            <p class="card-text mt-3">
+              The Appalachian Mountains are among the oldest mountain ranges in the world, estimated to be around 480
+              million years old. They stretch for about 1,500 miles from Newfoundland in Canada down to Alabama. Mt.
+              Mitchell in North Carolina is the highest peak in the range at 6,684 feet.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <img src="e9a8ae892ea8377b553a965335f4a862.png" class="icon" alt="..." />
+            <h5 class="card-title">Most Visited National Park</h5>
+            <p class="card-text mt-3">
+              Great Smoky Mountains National Park, located on the border of North Carolina and Tennessee, is the most
+              visited national park in the U.S., attracting over 12 million visitors annually. It's famous for its
+              misty, "smoky" atmosphere and diverse wildlife.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <img src="2531935.png" class="icon" alt="..." />
+            <h5 class="card-title">Dinosaur Fossils in National Parks</h5>
+            <p class="card-text mt-3">
+              Dinosaur National Monument, located on the Colorado-Utah border, contains one of the richest dinosaur
+              fossil beds in the world. Visitors can see fossilized dinosaur bones embedded in rock.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div>
+      <h2 id="heading2" class="text-center mt-5 pt-5 mb-5 pb-2">Your New Adventure Begins Here!</h>
+      <div class="row row-cols-1 row-cols-md-3 g-4 mx-5 px-5">
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="yosemite-national-park-landscape-lead-WINTERYOSEMITE0322-513572cd8d8d429d82ffbfc996c77c84.jpg"
+              class="card-img-top"
+              alt="An image of Yosemite National Park"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Yosemite National Park</h5>
+              <p class="card-text">
+                Yosemite National Park, located in California's Sierra Nevada mountains, is renowned for its stunning
+                granite cliffs, ancient giant sequoias, and breathtaking waterfalls. Iconic landmarks like El Capitan,
+                Half Dome, and Yosemite Falls draw millions of visitors each year.
+              </p>
             </div>
           </div>
         </div>
-      </nav>
-</body>
+        <div class="col">
+          <div class="card h-100">
+            <img src="images/Washington-StoryImage_2.jpg" class="card-img-top" alt="An image of Mt. Washington" />
+            <div class="card-body">
+              <h5 class="card-title">Mt. Washington</h5>
+              <p class="card-text">
+                Mt. Washington (6,288 feet) is the highest peak east of the Mississippi River and north of the
+                Carolinas. The upper part of the mountain has a climate similar to that of northern Labrador and
+                supports a variety of alpine flora and fauna.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a longer card with supporting text below as a natural lead-in to additional content.
+              </p>
+            </div>
+          </div> -->
+        <!-- </div>
+      </div>
+    </div> -->
+  </body>
 </html>
