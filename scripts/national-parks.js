@@ -32,17 +32,22 @@ function buildTable(data, tableBody) {
 
     let td7 = tr.insertCell();
     td7.innerText = nationalPark.Phone || "N/A";
+
+    let td8 = tr.insertCell();
+
+    td8.innerHTML = nationalPark.Visit
+      ? `<a href="${nationalPark.Visit}" target="_blank" style="color: blue; text-decoration: underline;">${nationalPark.Visit}</a>`
+      : "N/A";
   });
 }
 
 function populateDropdown(data, dropdown) {
   
-  //create "All" option
   const option = document.createElement("option");
   option.value = "All";
   option.textContent = "All";
   dropdown.appendChild(option);
-  dropdown.value = "All"
+  dropdown.value = "All";
 
   data.forEach((value) => {
     const option = document.createElement("option");
@@ -58,8 +63,9 @@ function filterTable(data, tableBody, filter) {
     const filteredData = filter === "All" ? data : data.filter((nationalPark) => nationalPark.State === filter);
     buildTable(filteredData, tableBody);
   } else {
-    const filteredData = filter === "All" ? data : data.filter((nationalPark) =>  nationalPark.LocationName.includes(filter));
-    console.log(filteredData)
+    const filteredData =
+      filter === "All" ? data : data.filter((nationalPark) => nationalPark.LocationName.includes(filter));
+    console.log(filteredData);
     buildTable(filteredData, tableBody);
   }
 }
