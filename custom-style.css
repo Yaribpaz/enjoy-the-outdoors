@@ -1,0 +1,79 @@
+#backgroundWithText {
+  background-image: url("pexels-eberhardgross-673020.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.theNavBar {
+  background-color: transparent !important;
+  position: absolute;
+}
+
+.banner-sub {
+  font-weight: 700;
+  padding: 10px;
+}
+
+#banner-text {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  transform: translate(-20%);
+  text-align: left !important;
+  font-size: 4rem !important;
+}
+
+#heading2 {
+  font-weight: 600;
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+#popularDestinations {
+  background-color: #c7cdc9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.table {
+  width: 100%;
+}
+
+.table th,
+.table td {
+  white-space: nowrap;
+  text-align: left;
+}
+
+
+  #backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('NorthFork-iStock-web-featured.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
