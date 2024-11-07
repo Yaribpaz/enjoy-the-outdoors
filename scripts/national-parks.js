@@ -32,18 +32,6 @@ function buildTable(data, tableBody) {
 
     let td7 = tr.insertCell();
     td7.innerText = nationalPark.Phone || "N/A";
-
-    let td8 = tr.insertCell();
-    td8.innerText = nationalPark.Fax || "N/A";
-
-    let td9 = tr.insertCell();
-    td9.innerText = nationalPark.Latitude;
-
-    let td10 = tr.insertCell();
-    td10.innerText = nationalPark.Longitude;
-
-    let td11 = tr.insertCell();
-    td11.innerText = nationalPark.Location;
   });
 }
 
