@@ -34,6 +34,7 @@ function showMountainDetails() {
       mountainImage.src = `./images/${mountain.img}`;
       cardTitleHeading.innerText = mountain.name;
       abbreviationParagraph.innerText = mountain.desc;
+      elevationHeader.innerText =`Elevation: ${mountain.elevation}`;
 
     }
   }
