@@ -7,9 +7,22 @@
   background-size: cover;
 }
 
+/* Navbar styling */
 .theNavBar {
   background-color: transparent !important;
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1; 
+}
+
+.theNavBar .nav-link {
+  color: white !important; 
+}
+
+.navbar-toggler {
+  border-color: white !important; 
 }
 
 .banner-sub {
